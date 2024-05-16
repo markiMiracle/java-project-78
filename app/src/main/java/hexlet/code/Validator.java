@@ -1,10 +1,18 @@
 package hexlet.code;
 
+import hexlet.code.schemas.NumberSchema;
+import hexlet.code.schemas.StringSchema;
 import lombok.Getter;
 
 @Getter
 public class Validator {
+
+
     public StringSchema string() {
-        return new StringSchema.StringSchemaBuilder().build();
+        return new StringSchema();
+    }
+
+    public NumberSchema number() {
+        return new NumberSchema();
     }
 }
