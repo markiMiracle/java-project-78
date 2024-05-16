@@ -5,7 +5,7 @@ import java.util.Objects;
 import java.util.function.Predicate;
 
 
-public class NumberSchema extends BaseSchema {
+public final class NumberSchema extends BaseSchema<Integer> {
     public NumberSchema range(int min, int max) {
         Predicate<Integer> validate = number -> number >= min && number <= max;
         addCheck(
@@ -15,12 +15,13 @@ public class NumberSchema extends BaseSchema {
         return this;
     }
 
-    public void required() {
+    public NumberSchema required() {
         Predicate<Integer> validate = Objects::nonNull;
         addCheck(
                 "requred",
                 validate
         );
+        return this;
     }
 
     public NumberSchema positive() {

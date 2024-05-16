@@ -2,12 +2,12 @@ package hexlet.code.schemas;
 
 import lombok.Getter;
 import lombok.Setter;
-
 import java.util.function.Predicate;
 
 @Getter
 @Setter
-public class StringSchema extends BaseSchema {
+public final class StringSchema extends BaseSchema<String> {
+    private Predicate<String> validators;
 
     public StringSchema minLength(int minLength) {
         Predicate<String> validate = string -> string.length() >= minLength;
@@ -25,12 +25,13 @@ public class StringSchema extends BaseSchema {
         );
         return this;
     }
-    public void required() {
+    public StringSchema required() {
         Predicate<String> validate = string -> string != null && !string.isEmpty();
         addCheck(
                 "requred",
                 validate
         );
+        return this;
     }
 
 }
