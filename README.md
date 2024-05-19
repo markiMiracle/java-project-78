@@ -8,7 +8,14 @@
 <a href="https://codeclimate.com/github/markiMiracle/java-project-78/test_coverage"><img src="https://api.codeclimate.com/v1/badges/f12f3b7b6916421fe69b/test_coverage" /></a>
 
 
-
+- ### ***About it:***
+  This application validates the data. 
+#### It is possible to use four data formats:  
+  - StringSchema
+  - NumberSchema
+  - MapSchema
+  - ShapeSchema
+  
 
 ## Setup
 
