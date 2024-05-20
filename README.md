@@ -9,20 +9,20 @@
 
 
 - ### ***About it:***
-  This application validates the data. You can use and configure four schema formats.
+  This application validates the data. You can use and configure three schema formats.
 - ### Schema Formats:  
   - StringSchema the following set of methods:
-  - - required()
+    - required()
     - contains()
-    -  minLength()
+    - minLength()
   - NumberSchema the following set of methods:
-  - - required()
-    -  range()
-    -   positive()
+    - required()
+    - range()
+    - positive()
   - MapSchema the following set of methods:
-  - - required()
+    - required()
     - sizeof()
-    - shape()
+    - shape() : this method allows you to configure validation of values inside the map
   
 
 ## Setup
