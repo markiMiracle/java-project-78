@@ -14,13 +14,14 @@ public class MapSchema extends BaseSchema {
         );
     }
 
-    public void sizeof(int size) {
+    public MapSchema sizeof(int size) {
 
         Predicate<Map<String, String>> validate = value -> value.size() == size;
         addCheck(
                 "sizeof",
                 validate
         );
+        return this;
     }
     public void shape(Map<String, BaseSchema<String>> schemas) {
         setShape(true);
