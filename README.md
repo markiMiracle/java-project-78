@@ -10,7 +10,7 @@
 
 - ### ***About it:***
   This application validates the data. 
-#### It is possible to use four data formats:  
+- ### It is possible to use four data formats:  
   - StringSchema
   - NumberSchema
   - MapSchema
