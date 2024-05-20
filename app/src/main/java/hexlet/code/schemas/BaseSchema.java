@@ -17,10 +17,10 @@ public abstract class BaseSchema<T> {
     protected Map<String, Predicate<T>> nestedChecks = new LinkedHashMap<>();
     protected boolean shape = false;
 
-    protected void addCheck(String name, Predicate<T> validate) {
+    protected final void addCheck(String name, Predicate<T> validate) {
         checks.put(name, validate);
     }
-    protected void addNestedCheck(String name, Predicate<T> schemas) {
+    protected final void addNestedCheck(String name, Predicate<T> schemas) {
         nestedChecks.put(name, schemas);
     }
     public final boolean isValid(T value) {

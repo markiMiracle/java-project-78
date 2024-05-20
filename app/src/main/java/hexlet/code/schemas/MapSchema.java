@@ -4,7 +4,7 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Predicate;
 
-public class MapSchema extends BaseSchema {
+public final class MapSchema extends BaseSchema {
 
     public void required() {
         Predicate<Map<String, String>> validate = Objects::nonNull;

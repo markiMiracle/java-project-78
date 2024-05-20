@@ -6,7 +6,7 @@ import hexlet.code.schemas.StringSchema;
 import lombok.Getter;
 
 @Getter
-public class Validator {
+public final class Validator {
 
 
     public StringSchema string() {
