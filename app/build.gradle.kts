@@ -6,7 +6,7 @@ plugins {
     application
 }
 application {
-    mainClass = "hexlet.code.App"
+    mainClass = "hexlet.code.Validator"
 }
 group = "hexlet.code"
 version = "1.0-SNAPSHOT"

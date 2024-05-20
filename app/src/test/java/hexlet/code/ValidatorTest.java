@@ -10,9 +10,7 @@ import org.junit.jupiter.api.Test;
 import java.util.HashMap;
 import java.util.Map;
 
-import static hexlet.code.App.hello;
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
-import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
@@ -23,12 +21,6 @@ public class ValidatorTest {
     public static void beforeAll() {
         v = new Validator();
     }
-    @Test
-    void helloTest() {
-        var hel = hello();
-        assertEquals(hel, hello());
-    }
-
     @Test
     void stringSchemaTest1() {
         StringSchema schema = v.string();
