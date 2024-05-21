@@ -4,9 +4,6 @@ plugins {
     checkstyle
     jacoco
 }
-application {
-    mainClass = "hexlet.code.Validator"
-}
 group = "hexlet.code"
 version = "1.0-SNAPSHOT"
 
