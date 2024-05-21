@@ -3,7 +3,6 @@ plugins {
     id("io.freefair.lombok") version "8.4"
     checkstyle
     jacoco
-    application
 }
 application {
     mainClass = "hexlet.code.Validator"
