@@ -23,15 +23,17 @@ public final class MapSchema extends BaseSchema {
         );
         return this;
     }
-    public MapSchema shape(Map<String, BaseSchema<String>> schemas) {
-        setShape(true);
-        for (var schema : schemas.entrySet()) {
-            Predicate<String> validate = value -> true;
-            for (var sch : schema.getValue().getChecks().entrySet()) {
-                validate = validate.and(sch.getValue());
-            }
-            addNestedCheck(schema.getKey(), validate);
-        }
+    public <T> MapSchema shape(Map<String, BaseSchema<T>> schemas) {
+        addCheck(
+                "shape",
+                 map -> {
+                     return schemas.entrySet().stream().allMatch(e -> {
+                         var v = ((Map<?, ?>) map).get(e.getKey());
+                         var schema = e.getValue();
+                         return schema.isValid((T) v);
+                     });
+                 });
         return this;
     }
+
 }
