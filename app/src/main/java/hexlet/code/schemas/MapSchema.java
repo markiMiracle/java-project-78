@@ -4,10 +4,10 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Predicate;
 
-public final class MapSchema extends BaseSchema {
+public final class MapSchema extends BaseSchema<Map<?, ?>> {
 
     public void required() {
-        Predicate<Map<String, String>> validate = Objects::nonNull;
+        Predicate<Map<?, ?>> validate = Objects::nonNull;
         addCheck(
                 "required",
                 validate
@@ -16,24 +16,23 @@ public final class MapSchema extends BaseSchema {
 
     public MapSchema sizeof(int size) {
 
-        Predicate<Map<String, String>> validate = value -> value.size() == size;
+        Predicate<Map<?, ?>> validate = value -> value.size() == size;
         addCheck(
                 "sizeof",
                 validate
         );
         return this;
     }
-    public <T> MapSchema shape(Map<String, BaseSchema<T>> schemas) {
+    public <T> void shape(Map<String, BaseSchema<T>> schemas) {
         addCheck(
                 "shape",
                  map -> {
                      return schemas.entrySet().stream().allMatch(e -> {
-                         var v = ((Map<?, ?>) map).get(e.getKey());
+                         var v = map.get(e.getKey());
                          var schema = e.getValue();
                          return schema.isValid((T) v);
                      });
                  });
-        return this;
     }
 
 }
